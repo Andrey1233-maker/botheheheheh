@@ -2,7 +2,7 @@ import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 import os
 
-token = os.environ.get('BOT_TOKEN')
+token = "aa1f21dea247df805c0b3136cd220918dfbc24891a09467de0529b5e62cbc4d2b14353e30144361cd261e"
 
 vk = vk_api.VkApi(token = token)
 
@@ -22,3 +22,5 @@ for event in longpoll.listen :
 
 			if msg == "привет":
 				send("LOL", id)
+				
+			else send("WHAT?", id)
