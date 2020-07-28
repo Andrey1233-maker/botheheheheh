@@ -23,4 +23,5 @@ for event in longpoll.listen :
 			if msg == "привет":
 				send("LOL", id)
 				
-			else send("WHAT?", id)
+			else:
+				send("WHAT?", id)
