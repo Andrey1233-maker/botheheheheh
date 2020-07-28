@@ -13,7 +13,7 @@ longpoll = VkLongPoll(vk)
 def send(text, id):
 	vk.method('messages.send',{'user_id' : id, 'message' : text, 'random_id' : 0})
 
-for event in longpoll.listen :
+for event in longpoll.listen():
 	if event.type == VkEventType.MESSAGE_NEW:
 		if event.to_me:
 
