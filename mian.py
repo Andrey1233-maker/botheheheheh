@@ -3,7 +3,7 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 import os
 
-token = "aa1f21dea247df805c0b3136cd220918dfbc24891a09467de0529b5e62cbc4d2b14353e30144361cd261e"
+token = ""
 
 vk = vk_api.VkApi(token=token)
 
