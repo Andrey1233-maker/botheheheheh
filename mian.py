@@ -10,7 +10,7 @@ api = vk.get_api()
 
 longpoll = VkLongPoll(vk)
 
-info = "Для этого нужно сделайть 1 комикс со смешариками и отправьте администратору сообщества,либо его заму.\n\n Администратор сообщества: https://vk.com/mi_miha\nзам.администратор: https://vk.com/andrew19e\n\nДальше администраторы решат брать ли вас в наш коллектив или нет"
+info = "для этого нужно скачать на телефон приложение meme generator free,сделайте 1 комикс со смешариками и отправьте администратору сообщества,либо его заму.\n Администратор сообщества: https://vk.com/mi_miha\nзам.администратор: https://vk.com/andrew19e\nДальше администраторы решат брать ли вас в наш коллектив или нет"
 
 
 def send(text, id, k):
@@ -32,7 +32,7 @@ def buttonLol(label, color):
     }
 
 def sendImage(code, id):
-    vk.method('messages.send', {'user_id': id, 'message': "", "attachment": code, 'random_id': 0})
+    vk.method("messages.send", {"peer_id": id, "attachment": str(code), "random_id": 0})
 
 keyboard = {
     "one_time": False,
