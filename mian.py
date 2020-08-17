@@ -83,7 +83,7 @@ for event in longpoll.listen():
 
             if msg == "-":
                 file.remove_in_list(str(id))
-                send("Не работет())))) , но когда-нибудь будет", id, False)
+                send("Не работет()))) , но когда-нибудь будет", id, False)
                 b = True
 
             if msg.find("!ras") == 0:
