@@ -1,8 +1,10 @@
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 import json
+import file
+import botFun
 
-token = "aa1f21dea247df805c0b3136cd220918dfbc24891a09467de0529b5e62cbc4d2b14353e30144361cd261e"
+token = "380b581f07cd920b8f639962f3ddea7050a04447b8bb301a7929ff5295e4782d0f5572ed7ec2b91f8bcdf"
 
 vk = vk_api.VkApi(token=token)
 
@@ -10,8 +12,8 @@ api = vk.get_api()
 
 longpoll = VkLongPoll(vk)
 
-info = "А НИКАК"
-##"Для этого нужно скачать на телефон приложение meme generator free,сделайте 1 комикс со смешариками и отправьте администратору сообщества,либо его заму.\n\n Администратор сообщества: https://vk.com/mi_miha\nЗам.администратор: https://vk.com/andrew19e\n\nДальше администраторы решат брать ли вас в наш коллектив или нет"
+info = "А никак"
+    ##"для этого нужно скачать на телефон приложение meme generator free,сделайте 1 комикс со смешариками и отправьте администратору сообщества,либо его заму.\n Администратор сообщества: https://vk.com/mi_miha\nзам.администратор: https://vk.com/andrew19e\nДальше администраторы решат брать ли вас в наш коллектив или нет"
 
 
 def send(text, id, k):
@@ -39,7 +41,9 @@ keyboard = {
     "one_time": False,
     "buttons": [
         [buttonLol("Стать редактором", color="positive")],
-        [buttonLol("Пообщаться", color="positive")]
+        [buttonLol("Пообщаться", color="positive")],
+        [buttonLol("+", color="positive"),
+        buttonLol("-", color="negative")]
     ]
 
 }
@@ -72,5 +76,21 @@ for event in longpoll.listen():
                 sendImage("photo-197780046_457239019", id)
                 b = True
 
+            if msg == "+":
+                file.add_in_list(str(id))
+                send("Не работет())))) , но когда-нибудь будет", id, False)
+                b = True
+
+            if msg == "-":
+                file.remove_in_list(str(id))
+                send("Не работет())))) , но когда-нибудь будет", id, False)
+                b = True
+
+            if msg.find("!ras") == 0:
+                botFun.sendall(msg, vk)
+                send("Мб сработало", id, False)
+                b = True
+
             if b != True:
                 sendImage("photo-197780046_457239018", id)
+
